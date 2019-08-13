@@ -15,7 +15,6 @@ and dedicated to the proposition that all men
 are created equal."""
 
 # address_lines = """Four score and seven years ago our fathers brought forth on this"""
-
 # with open('address.txt', 'w') as f:
 #     f.write(address_lines)
 
