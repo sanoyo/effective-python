@@ -10,7 +10,11 @@ class ReadVisits(object):
             for line in f:
                 yield int(line)
 
-def normalize(numbers):
+def normalize_defensive(numbers):
+    print(iter(numbers))
+    if iter(numbers) is iter(numbers):
+        print(iter(numbers))
+        raise TypeError('Must supply a container')
     total = sum(numbers)
     result = []
     for value in numbers:
@@ -18,6 +22,11 @@ def normalize(numbers):
         result.append(percent)
     return result
 
-visits = ReadVisits('my_numbers.txt')
-percentages = normalize(visits)
-print(percentages)
+visits = [15, 35, 80]
+# print(normalize_defensive(visits))
+
+# visits = ReadVisits('my_numbers.txt')
+# print(normalize_defensive(visits))
+
+it = iter(visits)
+normalize_defensive(it)
